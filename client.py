@@ -20,6 +20,7 @@ class Metrics:
         self.is_running = True
         while self.is_running:
             self.value = self.func()
+            time.sleep(60)
 
     def get_current_state(self):
         return self.name, self.value
@@ -51,4 +52,3 @@ while True:
     print(f"try to send: \n{data}")
     sock.send(data.encode('utf-8'))
     sock.close()
-    time.sleep(15)
